@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jasmine Tests for GFACE test task</title>
+    <link rel="stylesheet" type="text/css" href="lib/jasmine.css">
+    <script type="text/javascript" src="lib/jasmine.js"></script>
+    <script type="text/javascript" src="lib/jasmine-html.js"></script>
+
+    <script type="text/javascript" src="../js/libs/require.js"></script>
+
+    <script type="text/javascript">
+        require.config({
+            baseUrl: '../js'
+        });
+
+        require([
+            'class', 'dom', 'ajax', 'events', 'model', 'collection', 'view'
+        ], function (Class, $, Ajax, Events, Model, Collection, View) {
+
+            window.Class = Class;
+            window.$ = $;
+            window.Ajax = Ajax;
+            window.Events = Events;
+            window.Model = Model;
+            window.Collection = Collection;
+            window.View = View;
+
+            jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+            jasmine.getEnv().execute();
+        });
+    </script>
+
+    <!--<script src="../js/class.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/dom.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/ajax.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/events.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/model.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/collection.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/view.js" type="text/javascript" charset="utf-8"></script>-->
+
+    <script src="class.spec.js" type="text/javascript" charset="utf-8"></script>
+    <script src="dom.spec.js" type="text/javascript" charset="utf-8"></script>
+    <script src="events.spec.js" type="text/javascript" charset="utf-8"></script>
+    <script src="model.spec.js" type="text/javascript" charset="utf-8"></script>
+    <script src="collection.spec.js" type="text/javascript" charset="utf-8"></script>
+    <script src="view.spec.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+<script type="text/template" id="test-template"><div><h2>{id}</h2><span class="name">{name}</span><span class="surname">{surname}</span></div></script>
+
+<div class="view-tests" style="display: none;">
+    <input type="button" id="user-create-button" value="Create New User" />
+
+    <ul id="user-list" style="display: none;"></ul>
+</div>
+
+</body>
+</html>
